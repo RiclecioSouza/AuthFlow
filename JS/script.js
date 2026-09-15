@@ -5,7 +5,7 @@ const form = document.getElementById("form");
 const modal = document.getElementById("modal");
 const name = document.getElementById("name");
 
-function myfunction() {
+function SignUp() {
     const inputUsuario = usuario.value;
     const inputSenha = senha.value;
 
