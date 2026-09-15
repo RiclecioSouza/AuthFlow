@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-image: url(../imagem/imagemLago.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    border-radius: 12px;
+    padding: 1.8rem 3rem;
+    background: #0756A6B8;
+    box-shadow: 0px 5px 16px #003B7180;
+}
+
+h1{
+    padding-top: 10px;
+    text-align: center;
+    font-size: 26px;
+    color: #F8FCFF;
+}
+
+p{
+    padding-top: 8px;
+    padding-bottom: 3em;
+    text-align: center;
+    color: #EAF6FF;
+    font-weight: bolder;
+}
+
+p a{
+    text-decoration: none;
+    color: #E7C66A;
+    transition: .3s ease;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: #FFE49A;
+}
+
+input{
+    display: block;
+    padding: 5px;
+    width: 100%;
+    margin-bottom: 2em;
+    border: none;
+    border-bottom: 1px solid #D9EEFF;
+    font-size: 16px;
+    background: #0B72C980;
+    color: #F8FCFF;
+    transition: .3s ease;
+}
+
+input:focus{
+    outline: none;
+    border-bottom: 1px solid #E7C66A;
+}
+
+button{
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 3px;
+    padding: 7px;
+    background: #D3A94F;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover{
+    background-color: #E7C66A;
+}
+
+#modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 300px;
+    display: none;
+    border-radius: 12px;
+    padding: 1.8rem 3rem;
+    background: linear-gradient(140deg, #0756A6, #1685D1, #D3A94F);
+    box-shadow: 0px 5px 16px #003B71BE;
+}

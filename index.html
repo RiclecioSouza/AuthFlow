@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluxo de autenticação</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <form action="" method="post" id="form">
+                <h1>Inscreva-se</h1>
+
+                <p>Já é membro? <a href="#">Acessar</a></p>
+
+                <input type="text" id="usuario" placeholder="Usuário">
+                <input type="password" id="senha" placeholder="Senha" minlength="6" maxlength="10">
+
+                <button type="button" onclick="myfunction()">Sign Up</button>
+            </form>
+        </div>
+
+        <div id="modal">
+            <h1>Bem vindo <span id="name"></span></h1>
+            <button onclick="fechar()">Fechar</button>
+        </div>
+    </section>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>
