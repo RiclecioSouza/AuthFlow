@@ -21,7 +21,7 @@ function SignUp() {
         return;
     }
 
-    const login = localStorage.setItem("nome", inputUsuario);
+    localStorage.setItem("nome", inputUsuario);
 
     usuario.value = "";
     senha.value = "";
@@ -45,18 +45,20 @@ document.getElementById("linkCadastrar").addEventListener("click", (evento) => {
 });
 
 // Função para o Modal
+const container = document.querySelector(".container");
+
 function mostrarModal() {
     const nameSalvo = localStorage.getItem("nome");
 
     name.innerText = nameSalvo;
 
     modal.style.display = "block";
-    form.style.display = "none";
+    container.style.display = "none";
 }
 
 function fechar() {
     modal.style.display = "none";
-    form.style.display = "block";
+    container.style.display = "block";
 
     localStorage.removeItem("nome");
 }
