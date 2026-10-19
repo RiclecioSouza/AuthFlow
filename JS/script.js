@@ -1,6 +1,6 @@
 const usuario = document.getElementById("usuario");
 const senha = document.getElementById("senha");
-
+ 
 const form = document.getElementById("form");
 const modal = document.getElementById("modal");
 const name = document.getElementById("name");
@@ -16,10 +16,10 @@ function SignUp() {
     }
 
     if (inputSenha.length < 6) {
-    alert("A senha deve ter pelo menos 6 caracteres!");
-    senha.focus();
-    return;
-}
+        alert("A senha deve ter pelo menos 6 caracteres!");
+        senha.focus();
+        return;
+    }
 
     const login = localStorage.setItem("nome", inputUsuario);
 
@@ -29,6 +29,22 @@ function SignUp() {
     mostrarModal();
 }
 
+// Para acessar outro formulário
+const formLogin = document.getElementById("formLogin");
+
+document.getElementById("linkAcessar").addEventListener("click", (evento) => {
+    evento.preventDefault();
+    form.classList.add("escondido");
+    formLogin.classList.remove("escondido");
+});
+
+document.getElementById("linkCadastrar").addEventListener("click", (evento) => {
+    evento.preventDefault();
+    formLogin.classList.add("escondido");
+    form.classList.remove("escondido");
+});
+
+// Função para o Modal
 function mostrarModal() {
     const nameSalvo = localStorage.getItem("nome");
 
