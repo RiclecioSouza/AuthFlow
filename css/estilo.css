@@ -83,6 +83,17 @@ input:focus{
     border-bottom: 1px solid #E7C66A;
 }
 
+.check{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.check label{
+    padding-left: 5px;
+}
+
 button{
     width: 100%;
     border: none;
