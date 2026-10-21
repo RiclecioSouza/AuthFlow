@@ -1,10 +1,20 @@
 const usuario = document.getElementById("usuario");
 const senha = document.getElementById("senha");
 const confirmarSenha = document.getElementById("confirmarSenha");
+const mensage = document.getElementById("mensage");
  
 const form = document.getElementById("form");
 const modal = document.getElementById("modal");
 const name = document.getElementById("name");
+
+function limparMensagem() {
+    mensage.textContent = "";
+    alerts.textContent = "";
+}
+
+usuario.addEventListener("input", limparMensagem);
+senha.addEventListener("input", limparMensagem);
+confirmarSenha.addEventListener("input", limparMensagem);
 
 function SignUp() {
     const inputUsuario = usuario.value;
@@ -12,19 +22,19 @@ function SignUp() {
     const inputConfirmacao = confirmarSenha.value;
 
     if(inputUsuario.trim() === "" || inputSenha === "") {
-        alert("Preencha o campo!");
+        mensage.textContent = "Preencha o campo!";
         usuario.focus();
         return;
     }
 
-    if (inputSenha.length < 6) {
-        alert("A senha deve ter pelo menos 6 caracteres!");
+    if(inputSenha.length < 6) {
+        mensage.textContent = "A senha deve ter pelo menos 6 caracteres!";
         senha.focus();
         return;
     }
 
     if(inputConfirmacao !== inputSenha) {
-        alert("Senhas diferentes. Confira a confirmação.");
+        mensage.textContent = "Senhas diferentes. Confira a confirmação.";
         confirmarSenha.focus();
         return;
     }
@@ -57,33 +67,20 @@ document.getElementById("linkCadastrar").addEventListener("click", (evento) => {
 
 const usuarioLogin = document.getElementById("usuarioLogin");
 const senhaLogin = document.getElementById("senhaLogin");
+const alerts = document.getElementById("alert");
+
+usuarioLogin.addEventListener("input", limparMensagem);
+senhaLogin.addEventListener("input", limparMensagem);
 
 document.getElementById("botaoLogin").addEventListener("click", () => {
-    if (usuarioLogin.value.trim() === "" || senhaLogin.value === "") {
-        alert("Preencha o usuário e a senha.");
+    if(usuarioLogin.value.trim() === "" || senhaLogin.value === "") {
+        alerts.textContent = "Preencha o usuário e a senha.";
+        usuarioLogin.focus();
         return;
     }
 
     alert("Formulário preenchido!");
 });
-
-// Função para o Modal
-const container = document.querySelector(".container");
-
-function mostrarModal() {
-    const nameSalvo = localStorage.getItem("nome");
-    name.innerText = nameSalvo;
-
-    modal.style.display = "block";
-    container.style.display = "none";
-}
-
-function fechar() {
-    modal.style.display = "none";
-    container.style.display = "block";
-
-    localStorage.removeItem("nome");
-}
 
 // Opção para mostrar ou ocultar a senha
 const mostrarSenha = document.getElementById("mostrarSenha");
@@ -105,3 +102,21 @@ senhaVisivel.addEventListener("click", () => {
         senhaLogin.type="password";
     }
 });
+
+// Função para o Modal
+const container = document.querySelector(".container");
+
+function mostrarModal() {
+    const nameSalvo = localStorage.getItem("nome");
+    name.innerText = nameSalvo;
+
+    modal.style.display = "block";
+    container.style.display = "none";
+}
+
+function fechar() {
+    modal.style.display = "none";
+    container.style.display = "block";
+
+    localStorage.removeItem("nome");
+}
