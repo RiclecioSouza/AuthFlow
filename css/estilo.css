@@ -61,7 +61,7 @@ label{
     color: #000000bd;
 }
 
-input{
+input:not(input[type="checkbox"]){
     display: block;
     padding: 5px;
     width: 100%;
