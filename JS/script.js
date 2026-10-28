@@ -10,6 +10,7 @@ const name = document.getElementById("name");
 function limparMensagem() {
     mensage.textContent = "";
     alerts.textContent = "";
+    alerts.classList.remove("sucesso");
 }
 
 usuario.addEventListener("input", limparMensagem);
@@ -67,6 +68,8 @@ senhaLogin.addEventListener("input", limparMensagem);
 
 function validarLogin() {
     alerts.textContent = "Formulário preenchido!";
+
+    alerts.classList.add("sucesso");
 }
 
 formLogin.addEventListener("submit", (evento) => {

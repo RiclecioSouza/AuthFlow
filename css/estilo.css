@@ -100,10 +100,14 @@ input:focus{
 }
 
 #mensage,
-#alert{
+#alerts.sucesso{
     padding-top: 8px;
     padding-bottom: 12px;
     color: #ffd6d6ce;
+}
+
+#alerts.sucesso {
+    color: #9af8b0;
 }
 
 button{
