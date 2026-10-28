@@ -16,7 +16,7 @@
                 <p>Já é membro? <a href="#" id="linkAcessar">Acessar</a></p>
 
                 <label for="usuario">E-mail</label>
-                <input type="email" id="usuario" placeholder="E-mail">
+                <input type="email" id="usuario" placeholder="E-mail" required>
 
                 <label for="senha">Senha</label>
                 <input type="password" id="senha" placeholder="Senha" minlength="6" maxlength="10" required>
@@ -28,17 +28,17 @@
                     <input type="checkbox" id="mostrarSenha">
                     <label for="mostrarSenha">Mostrar senha</label>
                 </div>
-
+                
                 <p id="mensage"></p>
 
-                <button type="button" onclick="SignUp()">Cadastrar-se</button>
+                <button type="submit">Cadastrar-se</button>
             </form>
 
             <form id="formLogin" class="escondido">
                 <h1>Acessar</h1>
                 <p>Ainda não é membro? <a href="#" id="linkCadastrar">Inscreva-se</a></p>
 
-                <label for="usuario">E-mail</label>
+                <label for="usuarioLogin">E-mail</label>
                 <input type="email" id="usuarioLogin" placeholder="E-mail" required>
 
                 <label for="senhaLogin">Senha</label>
@@ -49,9 +49,9 @@
                     <label for="senhaVisivel">Mostrar senha</label>
                 </div>
 
-                <p id="alert"></p>
+                <p id="alerts"></p>
 
-                <button type="button" id="botaoLogin">Entrar</button>
+                <button type="submit" id="botaoLogin">Entrar</button>
             </form>
         </div>
 

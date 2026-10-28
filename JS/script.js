@@ -20,19 +20,7 @@ function SignUp() {
     const inputUsuario = usuario.value;
     const inputSenha = senha.value;
     const inputConfirmacao = confirmarSenha.value;
-
-    if(inputUsuario.trim() === "" || inputSenha === "") {
-        mensage.textContent = "Preencha o campo!";
-        usuario.focus();
-        return;
-    }
-
-    if(inputSenha.length < 6) {
-        mensage.textContent = "A senha deve ter pelo menos 6 caracteres!";
-        senha.focus();
-        return;
-    }
-
+    
     if(inputConfirmacao !== inputSenha) {
         mensage.textContent = "Senhas diferentes. Confira a confirmação.";
         confirmarSenha.focus();
@@ -47,6 +35,11 @@ function SignUp() {
 
     mostrarModal();
 }
+
+form.addEventListener("submit", (evento) => {
+    evento.preventDefault();
+    SignUp();
+});
 
 // Para acessar outro formulário
 const formLogin = document.getElementById("formLogin");
@@ -67,19 +60,18 @@ document.getElementById("linkCadastrar").addEventListener("click", (evento) => {
 
 const usuarioLogin = document.getElementById("usuarioLogin");
 const senhaLogin = document.getElementById("senhaLogin");
-const alerts = document.getElementById("alert");
+const alerts = document.getElementById("alerts");
 
 usuarioLogin.addEventListener("input", limparMensagem);
 senhaLogin.addEventListener("input", limparMensagem);
 
-document.getElementById("botaoLogin").addEventListener("click", () => {
-    if(usuarioLogin.value.trim() === "" || senhaLogin.value === "") {
-        alerts.textContent = "Preencha o usuário e a senha.";
-        usuarioLogin.focus();
-        return;
-    }
+function validarLogin() {
+    alerts.textContent = "Formulário preenchido!";
+}
 
-    alert("Formulário preenchido!");
+formLogin.addEventListener("submit", (evento) => {
+    evento.preventDefault();
+    validarLogin();
 });
 
 // Opção para mostrar ou ocultar a senha
