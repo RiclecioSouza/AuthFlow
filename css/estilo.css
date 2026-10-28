@@ -14,12 +14,17 @@ body{
 
 section{
     height: 100vh;
+    min-height: 100svh;
+    height: auto;
+    padding: 20px 16px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .container{
+    width: 100%;
+    max-width: 420px;
     border-radius: 12px;
     padding: 1.8rem 3rem;
     background: #0756A6B8;

@@ -76,7 +76,7 @@ formLogin.addEventListener("submit", (evento) => {
 
 // Opção para mostrar ou ocultar a senha
 const mostrarSenha = document.getElementById("mostrarSenha");
-mostrarSenha.addEventListener("click", () => {
+mostrarSenha.addEventListener("change", () => {
     if(mostrarSenha.checked === true) {
         senha.type="text";
         confirmarSenha.type="text";
@@ -87,7 +87,7 @@ mostrarSenha.addEventListener("click", () => {
 });
 
 const senhaVisivel = document.getElementById("senhaVisivel");
-senhaVisivel.addEventListener("click", () => {
+senhaVisivel.addEventListener("change", () => {
     if(senhaVisivel.checked === true) {
         senhaLogin.type="text";
     } else if(senhaVisivel.checked === false) {
