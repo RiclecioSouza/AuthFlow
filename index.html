@@ -34,7 +34,7 @@
                 <button type="submit">Cadastrar-se</button>
             </form>
 
-            <form id="formLogin" class="escondido">
+            <form action="" method="post" id="formLogin" class="escondido">
                 <h1>Acessar</h1>
                 <p>Ainda não é membro? <a href="#" id="linkCadastrar">Inscreva-se</a></p>
 
@@ -55,9 +55,12 @@
             </form>
         </div>
 
-        <div id="modal">
-            <h1>Bem vindo <span id="name"></span></h1>
-            <button onclick="fechar()">Fechar</button>
+        <div id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="tituloModal">
+            <div class="conteudoModa">
+                <h1>Cadastro de demonstração concluído!</h1>
+                <p>Bem vindo <span id="name"></span></p>
+                <button type="button" id="fecharModal">Fechar</button>
+            </div>
         </div>
     </section>
 

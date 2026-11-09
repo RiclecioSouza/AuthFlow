@@ -67,7 +67,7 @@ usuarioLogin.addEventListener("input", limparMensagem);
 senhaLogin.addEventListener("input", limparMensagem);
 
 function validarLogin() {
-    alerts.textContent = "Formulário preenchido!";
+    alerts.textContent = "Campos preenchidos corretamente!";
 
     alerts.classList.add("sucesso");
 }
@@ -100,18 +100,41 @@ senhaVisivel.addEventListener("change", () => {
 
 // Função para o Modal
 const container = document.querySelector(".container");
+const fecharModal = document.getElementById("fecharModal");
 
 function mostrarModal() {
     const nameSalvo = localStorage.getItem("nome");
     name.innerText = nameSalvo;
 
-    modal.style.display = "block";
+    modal.classList.add("ativo");
+    modal.setAttribute("aria-hidden", "false");
+
     container.style.display = "none";
+
+    document.body.style.overflow = "hidden"
 }
 
 function fechar() {
-    modal.style.display = "none";
-    container.style.display = "block";
+    modal.classList.remove("ativo");
+    modal.setAttribute("aria-hidden", "true");
 
     localStorage.removeItem("nome");
+
+    container.style.display = "block";
+
+    document.body.style.overflow = "";
 }
+
+fecharModal.addEventListener("click", fechar);
+
+modal.addEventListener("click", (evento) => {
+    if (evento.target === modal) {
+        fechar();
+    }
+});
+
+document.addEventListener("keydown", (evento) => {
+    if (evento.key === "Escape" && modal.classList.contains("ativo")) {
+        fechar();
+    }
+});

@@ -129,12 +129,21 @@ button:hover{
 }
 
 #modal{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 300px;
     display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal.ativo {
+    display: flex;
+}
+
+.conteudoModa{
     border-radius: 12px;
     padding: 1.8rem 3rem;
     background: linear-gradient(140deg, #0756A6, #1685D1, #D3A94F);
