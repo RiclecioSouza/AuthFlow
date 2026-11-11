@@ -61,17 +61,26 @@ a:hover{
     color: #FFE49A;
 }
 
+a:focus-visible {
+    outline: 2px solid #FFE49A;
+    outline-offset: 4px;
+}
+
 label{
     font-weight: 600;
     color: #000000bd;
 }
 
-input:not(input[type="checkbox"]){
+input[type="email"],
+input[type="password"],
+input[type="text"]{
     display: block;
     padding: 5px;
     width: 100%;
     margin-bottom: 2em;
-    border: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
     border-bottom: 1px solid #D9EEFF;
     font-size: 16px;
     background: #0B72C980;
@@ -83,9 +92,13 @@ input::placeholder{
     color: #D3A94F;
 }
 
-input:focus{
-    outline: none;
-    border-bottom: 1px solid #E7C66A;
+input:focus-visible{
+    outline: 1px solid #bb9d49;
+    border-bottom: 1px solid #bb9d49;
+}
+
+input[type="checkbox"]:focus-visible{
+    outline: 2px solid #E7C66A;
 }
 
 .check{
@@ -95,8 +108,13 @@ input:focus{
     margin-bottom: 12px;
 }
 
+input[type="checkbox"]{
+    cursor: pointer;
+}
+
 .check label{
     padding-left: 5px;
+    cursor: pointer;
 }
 
 #mensage,

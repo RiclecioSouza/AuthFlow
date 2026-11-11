@@ -11,6 +11,9 @@ function limparMensagem() {
     mensage.textContent = "";
     alerts.textContent = "";
     alerts.classList.remove("sucesso");
+
+    confirmarSenha.removeAttribute("aria-invalid");
+    confirmarSenha.classList.remove("erro");
 }
 
 usuario.addEventListener("input", limparMensagem);
@@ -23,7 +26,11 @@ function SignUp() {
     const inputConfirmacao = confirmarSenha.value;
     
     if(inputConfirmacao !== inputSenha) {
+        confirmarSenha.setAttribute("aria-invalid", "true");
+        confirmarSenha.classList.add("erro");
+
         mensage.textContent = "Senhas diferentes. Confira a confirmação.";
+        
         confirmarSenha.focus();
         return;
     }
@@ -101,17 +108,20 @@ senhaVisivel.addEventListener("change", () => {
 // Função para o Modal
 const container = document.querySelector(".container");
 const fecharModal = document.getElementById("fecharModal");
+const opener = null;
 
 function mostrarModal() {
     const nameSalvo = localStorage.getItem("nome");
     name.innerText = nameSalvo;
+
+    const opener = document.activeElement;
 
     modal.classList.add("ativo");
     modal.setAttribute("aria-hidden", "false");
 
     container.style.display = "none";
 
-    document.body.style.overflow = "hidden"
+    document.body.style.overflow = "hidden";
 }
 
 function fechar() {
@@ -123,6 +133,8 @@ function fechar() {
     container.style.display = "block";
 
     document.body.style.overflow = "";
+
+    opener?.focus();
 }
 
 fecharModal.addEventListener("click", fechar);
